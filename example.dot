@@ -1,0 +1,84 @@
+digraph G {
+  rankdir=LR;
+  label="\n\nArchitetural Diagram's example in DOT Language\n\n"
+  ratio = fill
+  fontsize=65
+  fontname = "Helvetica-Oblique"
+  ranksep=3.3
+  overlap=false
+
+  {
+    /* Databases */
+    node[shape=cylinder fillcolor=lightgoldenrod1 style=filled]
+    MAIN_DB;
+    SECONDARY_DB;
+  }
+
+  {
+    /* Main APIs */
+    node[shape=box3d fillcolor=deepskyblue style=filled];
+    fontsize=35
+
+    api_a [label="Best Name for Api A"];
+    api_y [label="Best name for API Y"];
+    api_x [label="Best name for API X"];
+    api_k [label="Best name for API K"];
+    onboarding_api [label="Best Name for Onboarding API"];
+    customer_settings_api [label="Best Name for Customer Settings API"];
+    api_c [label="Best Name for API C"];
+    api_s [label="Best Name for API S"];
+    api_r [label="Best Name for Api R"];
+  }
+
+  {
+    /* APIs Core */
+    node[shape=box3d fillcolor=gray90 style=filled];
+
+    another_compay_share_api [label="Company Shared API Domain B"];
+    company_shared_api_a [label="Company Shared API"];
+  }
+
+  {
+    /* Common APIs */
+    node[shape=box3d fillcolor=honeydew style=filled];
+
+    settings_api [label="Best Name For Settings Api"];
+    biz_domain_api [label="Best Name For Business Domain Api"];
+    holidays [label="Best Name For Holidays Api Provider"];
+    security_info_api [label="Best Name For Security Info Api"];
+  }
+
+  {
+    /* Third-Party Services */
+    node [shape=cds fillcolor=lightcoral style=filled];
+
+    third_party_service_a [label="Third Party A"];
+    third_party_service_b [label="Third Party B"];
+  }
+
+  /*
+    DBs
+  */
+  {
+    edge [color="lightgoldenrod4"]
+    api_a -> MAIN_DB;
+    api_x -> MAIN_DB;
+    api_r -> MAIN_DB;
+    security_info_api -> SECONDARY_DB;
+    api_y -> { MAIN_DB SECONDARY_DB };
+  }
+
+  /* 
+    Integrações 
+  */
+  api_c -> { settings_api biz_domain_api holidays another_compay_share_api third_party_service_a }
+  api_x -> { holidays company_shared_api_a api_c } 
+  company_shared_api_a -> api_x [label="callback"]
+  api_k -> security_info_api
+  onboarding_api -> api_k
+  customer_settings_api -> holidays
+  api_s -> api_k 
+  api_r -> { holidays settings_api }
+  api_y -> security_info_api
+}
+

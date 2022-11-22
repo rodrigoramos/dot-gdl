@@ -17,16 +17,13 @@ The file `example.dot` is written using [DOT][1] language and we suggest that yo
 ## Next Steps
 
 ### Layout Engines
-Try other types of layout engines (from "neato" to "nop"). All layout engines supported are listed in (Graphiz Docs)[https://graphviz.org/docs/layouts/].
+Try other types of layout engines (from "neato" to "nop"). All layout engines supported are listed in [Graphiz Docs](https://graphviz.org/docs/layouts/).
 
 ### Use the Graphiz Visual Editor 
-You can test some attributes e others configurations using the (Graphiz Visual Editor)[http://magjac.com/graphviz-visual-editor/].
+You can test some attributes e others configurations using the [Graphiz Visual Editor](http://magjac.com/graphviz-visual-editor/).
 
 ### Create diagrams automatically 
 You can also create your diagrams using your build services preferred like Azure DevOps, GitHub Actions and more...
-
-
-## References
 
 [1]: <https://en.wikipedia.org/wiki/DOT_(graph_description_language)> "DOT Language"
 [2]: <https://graphviz.org/> "Graphviz"

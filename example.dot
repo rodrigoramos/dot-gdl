@@ -31,7 +31,7 @@ digraph G {
   }
 
   {
-    /* APIs Core */
+    /* Company Shared APIs */
     node[shape=box3d fillcolor=gray90 style=filled];
 
     another_compay_share_api [label="Company Shared API Domain B"];
@@ -57,7 +57,7 @@ digraph G {
   }
 
   /*
-    DBs
+    Database Relationships
   */
   {
     edge [color="lightgoldenrod4"]
@@ -69,7 +69,7 @@ digraph G {
   }
 
   /* 
-    Integrações 
+    APIs/Services Relationships
   */
   api_c -> { settings_api biz_domain_api holidays another_compay_share_api third_party_service_a }
   api_x -> { holidays company_shared_api_a api_c } 
